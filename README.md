@@ -62,8 +62,8 @@
     docker run --name alpine -it -e CLASS=dws -e NAME=saeed alpine
     echo $NAME & echo $CLASS
 ## Task9:
-   Run an alpine container, bind an arbitrary path in the host /data of the container.
+   Run an alpine container, bind an arbitrary path in the host to /data of the container.
    Aslo change the container WorkingDir this mounted path.\
    ### Answer:
-   docker run --rm -it --name alpine -v /home/saeed/test:/data --workdir /data alpine
+    docker run --rm -it --name alpine -v /home/saeed/test:/data --workdir /data alpine
      
