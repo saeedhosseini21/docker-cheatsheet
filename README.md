@@ -47,8 +47,8 @@
 ## Task6:  
    Run a redis container then write it's id in a file named myredis.cid
    ### Answer:
-     docker run --rm -it --name redis redis
-     docker container inspect alpine  | jq '.[0].Id' > myredis.cid
+     docker run -d --name redis redis > myredis.cid
+     docker container inspect -f '{{ .Id }}' redis > myredis.cid
 ## Task7:
    Run a nginx container which is limited to CPU=1.5core, Memory=512M and Swap=256M.
    Also the container's processes must only be run on cores number 0 and 2.
@@ -61,5 +61,9 @@
    ### Answer:
     docker run --name alpine -it -e CLASS=dws -e NAME=saeed alpine
     echo $NAME & echo $CLASS
-
+## Task9:
+   Run an alpine container, bind an arbitrary path in the host /data of the container.
+   Aslo change the container WorkingDir this mounted path.\
+   ### Answer:
+   docker run --rm -it --name alpine -v /home/saeed/test:/data --workdir /data alpine
      
